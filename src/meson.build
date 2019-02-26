@@ -29,7 +29,7 @@ library('gstrpicamsrc',
   rpicamsrc_sources, gstrpicam_enum_types_h, gstrpicam_enum_types_c,
   c_args : gst_rpicamsrc_args,
   include_directories : config_inc,
-  link_args : '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile),
+  link_args : '-Wl,--no-as-needed, -Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
   link_depends : mapfile,
   dependencies : [gst_dep, gstbase_dep, gstvideo_dep] + mmal_deps,
   install : true,
