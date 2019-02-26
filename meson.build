@@ -32,7 +32,7 @@ endif
 rpi_lib_path = get_option('with-rpi-lib-dir')
 mmal_deps = []
 foreach rpi_lib : ['mmal_components', 'mmal_core', 'mmal_util', 'mmal_vc_client', 'vcos', 'bcm_host', 'vchostif']
-  l = cc.find_library(rpi_lib, dirs : rpi_lib_path, required : false)
+  l = cc.find_library(rpi_lib, dirs : rpi_lib_path, required : false, link_args: ['-Wl,--no-as-needed'])
   if not l.found()
     error('''
           Could not find lib@0@ in standard library paths and @1@.
