@@ -33,4 +33,5 @@ library('gstrpicamsrc',
   link_depends : mapfile,
   dependencies : [gst_dep, gstbase_dep, gstvideo_dep] + mmal_deps,
   install : true,
+  install_rpath: '/usr/lib',
   install_dir : plugins_install_dir)
