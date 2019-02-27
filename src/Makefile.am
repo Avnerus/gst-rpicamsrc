@@ -14,7 +14,7 @@ libgstrpicamsrc_la_SOURCES = \
 libgstrpicamsrc_la_CFLAGS = $(GST_CFLAGS) $(RPI_INCLUDEPATH) -I$(top_srcdir)
 libgstrpicamsrc_la_LIBADD = $(GST_LIBS) $(RPI_LIBFLAGS) -lmmal_util -lmmal_core -lmmal_vc_client -lmmal_components -lvcos -lvchostif -lbcm_host 
 libgstrpicamsrc_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS) -Wl,--no-as-needed -Wl,-rpath=/usr/lib --enable-new-dtags
-libgstrpicamsrc_la_LIBTOOLFLAGS = -tag=disable-static
+libgstrpicamsrc_la_LIBTOOLFLAGS = --tag=disable-static
 
 gstrpicam-enum-types.h: gstrpicam-enums-template.h $(ENUM_FILES) $(GLIB_MKENUMS)
 	$(AM_V_GEN) (cd $(srcdir) && $(GLIB_MKENUMS) --template gstrpicam-enums-template.h $(ENUM_FILES)) > $@
