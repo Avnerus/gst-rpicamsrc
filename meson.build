@@ -1,7 +1,7 @@
 project('gst-rpicamsrc', 'c', version : '1.0.0',
   meson_version : '>= 0.34.0', default_options : ['b_asneeded=false'])
 
-add_project_link_arguments('-Wl,--no-as-needed', language: 'c')
+add_project_link_arguments(['-Wl,--no-as-needed', '-Wl,-rpath-link=/usr/lib'], language: 'c')
 
 gst_req = '>= 1.0.0'
 
