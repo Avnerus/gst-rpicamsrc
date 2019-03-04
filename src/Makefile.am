@@ -12,7 +12,7 @@ libgstrpicamsrc_la_SOURCES = \
 
 # Need -DGST_USE_UNSTABLE_API for GstBaseCameraSrc
 libgstrpicamsrc_la_CFLAGS = $(GST_CFLAGS) $(RPI_INCLUDEPATH) -I$(top_srcdir)
-libgstrpicamsrc_la_LIBADD = $(GST_LIBS) $(RPI_LIBFLAGS) -lmmal_core -lmmal_util -lmmal_components -lvcos -lvchostif -lbcm_host 
+libgstrpicamsrc_la_LIBADD = $(GST_LIBS) $(RPI_LIBFLAGS) -lmmal_core -lmmal_util -lmmal_components -lmmal_vc_client -lvcos -lvchostif -lbcm_host 
 libgstrpicamsrc_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS) -Wl,--no-as-needed -Wl,-rpath=/usr/lib --enable-new-dtags
 libgstrpicamsrc_la_LIBTOOLFLAGS = --tag=disable-static
 
